@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  mysql_db:
+    image: mysql:latest
+    container_name: mysql_container
+    environment:
+      MYSQL_ROOT_PASSWORD: 1907
+      MYSQL_DATABASE: mvp_finance
+      MYSQL_USER: user_finance
+      MYSQL_PASSWORD: 1907
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
