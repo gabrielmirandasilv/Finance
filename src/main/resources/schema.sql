@@ -15,14 +15,11 @@ CREATE TABLE IF NOT EXISTS `earnings` (
   `type` ENUM('FIXED', 'VARIABLE') NOT NULL,
   `user_id` BIGINT NOT NULL,
   PRIMARY KEY (`id`),
-  -- Índice para otimizar buscas por user_id
-  INDEX `fk_earnings_user_id_idx` (`user_id` ASC) VISIBLE,
   -- Define a chave estrangeira para o relacionamento com a tabela 'users'
   CONSTRAINT `fk_earnings_user_id`
     FOREIGN KEY (`user_id`)
     REFERENCES `users` (`id`)
     ON DELETE CASCADE
-    ON UPDATE NO ACTION
 )
 ENGINE = InnoDB;
 
@@ -34,13 +31,10 @@ CREATE TABLE IF NOT EXISTS `payoffs` (
   `type` ENUM('FIXED', 'VARIABLE') NOT NULL,
   `user_id` BIGINT NOT NULL,
   PRIMARY KEY (`id`),
-  -- Índice para otimizar buscas por user_id
-  INDEX `fk_payoffs_user_id_idx` (`user_id` ASC) VISIBLE,
   -- Define a chave estrangeira para o relacionamento com a tabela 'users'
   CONSTRAINT `fk_payoffs_user_id`
     FOREIGN KEY (`user_id`)
     REFERENCES `users` (`id`)
     ON DELETE CASCADE
-    ON UPDATE NO ACTION
 )
 ENGINE = InnoDB;
