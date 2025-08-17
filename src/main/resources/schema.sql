@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS `income` (
   `user_id` BIGINT NOT NULL,
   PRIMARY KEY (`id`),
   -- Define a chave estrangeira para o relacionamento com a tabela 'users'
-  CONSTRAINT `fk_earnings_user_id`
+  CONSTRAINT `fk_income_user_id`
     FOREIGN KEY (`user_id`)
     REFERENCES `users` (`id`)
     ON DELETE CASCADE
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `expense` (
   `user_id` BIGINT NOT NULL,
   PRIMARY KEY (`id`),
   -- Define a chave estrangeira para o relacionamento com a tabela 'users'
-  CONSTRAINT `fk_payoffs_user_id`
+  CONSTRAINT `fk_expense_user_id`
     FOREIGN KEY (`user_id`)
     REFERENCES `users` (`id`)
     ON DELETE CASCADE
