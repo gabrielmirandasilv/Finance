@@ -15,7 +15,6 @@ CREATE TABLE IF NOT EXISTS `income` (
   `type` ENUM('FIXED', 'VARIABLE') NOT NULL,
   `user_id` BIGINT NOT NULL,
   PRIMARY KEY (`id`),
-  -- Define a chave estrangeira para o relacionamento com a tabela 'users'
   CONSTRAINT `fk_income_user_id`
     FOREIGN KEY (`user_id`)
     REFERENCES `users` (`id`)
@@ -31,7 +30,6 @@ CREATE TABLE IF NOT EXISTS `expense` (
   `type` ENUM('FIXED', 'VARIABLE') NOT NULL,
   `user_id` BIGINT NOT NULL,
   PRIMARY KEY (`id`),
-  -- Define a chave estrangeira para o relacionamento com a tabela 'users'
   CONSTRAINT `fk_expense_user_id`
     FOREIGN KEY (`user_id`)
     REFERENCES `users` (`id`)
